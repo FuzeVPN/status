@@ -103,10 +103,8 @@ status-website:
   faviconSvg: https://status.fuzevpn.com/favicon.svg
   themeUrl: https://status.fuzevpn.com/fuzevpn-theme.css
   introTitle: "FuzeVPN service status"
-  introMessage: |-
-    Live status of FuzeVPN services and VPN locations, checked every 5 minutes by independent probes outside our infrastructure. If sign-in is down, new connections fail but sessions that are already connected keep working.
-
-    **About response times.** Each figure is a full HTTPS request (DNS lookup, connection, encryption handshake, then the reply) sent by a monitoring probe located near the server. It is not a ping and it is not measured from your device. A full request takes several times longer than a ping, so these figures are higher than the latency shown in the FuzeVPN app and do not reflect your connection speed.
+  introMessage: >-
+    Live status of FuzeVPN services and VPN locations, checked every 5 minutes by independent probes outside our infrastructure. If sign-in is down, new connections fail but sessions that are already connected keep working. Response times are full HTTPS requests, not pings: see the note at the bottom of the page.
   navbar:
     - title: Status
       href: /
@@ -116,4 +114,4 @@ status-website:
 i18n:
   averageResponseTime: "HTTPS response time: $TIMEms"
   averageResponseTimeTitle: HTTPS response time
-  footer: "[FuzeVPN](https://fuzevpn.com) · Monitoring powered by [Upptime](https://upptime.js.org)"
+  footer: "**About response times.** Each figure is a full HTTPS request (DNS lookup, connection, encryption handshake, then the reply) sent by a monitoring probe located near the server. It is not a ping and it is not measured from your device. A full request takes several times longer than a ping, so these figures are higher than the latency shown in the FuzeVPN app and do not reflect your connection speed.<br><br>[FuzeVPN](https://fuzevpn.com) · Monitoring powered by [Upptime](https://upptime.js.org)"
