@@ -43,7 +43,8 @@ for (const loc of locations) {
   }
   live.add(url);
   if (known.has(url)) continue;
-  added += `  - name: ${JSON.stringify(nodeName(loc))}\n    url: ${url}\n    expectedStatusCodes:\n      - 204\n`;
+  const cc = /^[A-Z]{2}$/.test(loc.country_code) ? loc.country_code : "World";
+  added += `  - name: ${JSON.stringify(nodeName(loc))}\n    url: ${url}\n    type: globalping\n    location: ${cc}\n    expectedStatusCodes:\n      - 204\n`;
   console.log(`Ajoute : ${loc.id}`);
 }
 

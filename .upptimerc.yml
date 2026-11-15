@@ -7,52 +7,78 @@ repo: status
 sites:
   - name: Website
     url: https://fuzevpn.com
+    type: globalping
+    location: Western Europe
   - name: Web app
     url: https://app.fuzevpn.com
+    type: globalping
+    location: Western Europe
   - name: Sign-in and new connections (API)
     url: https://api.fuzevpn.com/healthz
+    type: globalping
+    location: Western Europe
     expectedStatusCodes:
       - 200
 
   # Les noeuds VPN ci-dessous sont geres par scripts/sync-nodes.mjs.
   # Ajout automatique depuis https://api.fuzevpn.com/v1/locations.
+  # Chaque sonde part de Globalping, depuis un lieu proche du noeud (location).
+  # Un nouveau noeud recoit son code pays ; a affiner a la main si besoin.
   # Retrait manuel uniquement : l'API retire aussi un noeud en panne ou sature,
   # il ne doit donc pas disparaitre d'ici pour autant.
   # nodes:start
   - name: "VPN - Sao Paulo 01 (BR)"
     url: https://sao-paulo-01.fuzevpn.com/ping
+    type: globalping
+    location: Sao Paulo
     expectedStatusCodes:
       - 204
   - name: "VPN - Frankfurt 01 (DE)"
     url: https://frankfurt-01.fuzevpn.com/ping
+    type: globalping
+    location: Frankfurt
     expectedStatusCodes:
       - 204
   - name: "VPN - Frankfurt 02 (DE)"
     url: https://frankfurt-02.fuzevpn.com/ping
+    type: globalping
+    location: Frankfurt
     expectedStatusCodes:
       - 204
   - name: "VPN - Gravelines 03 (FR)"
     url: https://gravelines-03.fuzevpn.com/ping
+    type: globalping
+    location: FR
     expectedStatusCodes:
       - 204
   - name: "VPN - Gloucester 01 (GB)"
     url: https://gloucester-01.fuzevpn.com/ping
+    type: globalping
+    location: GB
     expectedStatusCodes:
       - 204
   - name: "VPN - Hong Kong 01 (HK)"
     url: https://hong-kong-01.fuzevpn.com/ping
+    type: globalping
+    location: Hong Kong
     expectedStatusCodes:
       - 204
   - name: "VPN - Warsaw 01 (PL)"
     url: https://warsaw-01.fuzevpn.com/ping
+    type: globalping
+    location: Warsaw
     expectedStatusCodes:
       - 204
   - name: "VPN - Singapore 01 (SG)"
     url: https://singapore-01.fuzevpn.com/ping
+    type: globalping
+    location: Singapore
     expectedStatusCodes:
       - 204
   - name: "VPN - Philadelphia 01 (US)"
     url: https://philadelphia-01.fuzevpn.com/ping
+    type: globalping
+    location: Philadelphia
     expectedStatusCodes:
       - 204
   # nodes:end
