@@ -1,0 +1,103 @@
+/* Theme FuzeVPN pour la page d'etat. Couleurs et police reprises de fuzevpn.com. */
+
+@font-face {
+  font-family: "Archivo";
+  src: url("fonts/archivo-latin-vf.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("fonts/archivo-latin-ext-vf.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  color-scheme: light;
+  --paper: #f3efe6;
+  --surface: #faf8f3;
+  --ink: #101820;
+  --muted: #625d54;
+  --line: #d1c9bd;
+  --signal: #f4c95d;
+  --ok: #087b55;
+  --warn: #9a5b00;
+  --bad: #b42318;
+
+  --body-background-color: var(--paper);
+  --body-text-color: var(--ink);
+  --card-background-color: var(--surface);
+  --card-border-color: var(--line);
+  --nav-background-color: var(--surface);
+  --nav-border-bottom-color: var(--line);
+  --nav-current-border-bottom-color: var(--ink);
+  --up-border-left-color: var(--ok);
+  --down-border-left-color: var(--bad);
+  --down-background-color: #fbe9e6;
+  --degraded-border-left-color: var(--warn);
+  --tag-color: #ffffff;
+  --tag-up-background-color: var(--ok);
+  --tag-down-background-color: var(--bad);
+  --tag-degraded-background-color: var(--warn);
+  --change-background-color: var(--signal);
+  --code-color: var(--ink);
+  --code-background-color: #eae4d9;
+  --error-button-border-color: var(--ink);
+  --error-button-background-color: var(--ink);
+  --error-button-color: var(--paper);
+  --submit-button-border-color: var(--ink);
+  --submit-button-background-color: var(--ink);
+  --submit-button-color: var(--paper);
+  --graph-opacity: 1;
+  --graph-filter: none;
+}
+
+body {
+  font-family: "Archivo", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* En-tete */
+nav { font-weight: 500 !important; }
+nav .logo { font-weight: 700 !important; font-size: 1.05rem; letter-spacing: -0.01em; }
+nav .logo img { height: 2.25rem !important; border-radius: 6px !important; margin-right: 0.7rem !important; }
+nav a { padding-top: 1.35rem !important; padding-bottom: 1.35rem !important; }
+nav a:not(.logo) { color: var(--muted); }
+nav a[aria-current] { color: var(--ink); }
+
+/* Titres et texte */
+h1 { font-weight: 800; letter-spacing: -0.03em; font-size: 2.3em; }
+h2 { font-weight: 700; letter-spacing: -0.02em; }
+h3 { font-weight: 600; opacity: 1; color: var(--muted); }
+p.lead { color: #3d3933; }
+main a { text-underline-offset: 0.15em; }
+
+/* Cartes */
+article { border-radius: 6px; }
+article.up, article.down, article.degraded { border-left-width: 0.25rem; }
+article h4 { font-weight: 700; margin-bottom: 0.3em; }
+article h4 .icon { height: 0.85rem !important; border-radius: 2px; box-shadow: 0 0 0 1px var(--line); }
+article > div { color: var(--muted); font-size: 0.92rem; }
+article .data { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* Le graphique de fond prend la teinte de la carte au lieu du vert d'origine. */
+article.graph {
+  background-color: var(--surface);
+  background-blend-mode: luminosity;
+}
+
+/* Selecteur de periode */
+form.r label {
+  cursor: pointer;
+  color: var(--muted);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  margin-left: 0.25rem !important;
+}
+form.r input:checked + label { background: var(--ink); color: var(--paper); font-weight: 600 !important; }
+
+.tag { border-radius: 6px; font-weight: 600; }
+footer { color: var(--muted); font-size: 0.9rem; opacity: 1 !important; }

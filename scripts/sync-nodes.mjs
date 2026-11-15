@@ -44,7 +44,8 @@ for (const loc of locations) {
   live.add(url);
   if (known.has(url)) continue;
   const cc = /^[A-Z]{2}$/.test(loc.country_code) ? loc.country_code : "World";
-  added += `  - name: ${JSON.stringify(nodeName(loc))}\n    url: ${url}\n    type: globalping\n    location: ${cc}\n    expectedStatusCodes:\n      - 204\n`;
+  const icon = cc === "World" ? "" : `    icon: https://status.fuzevpn.com/flags/${cc.toLowerCase()}.svg\n`;
+  added += `  - name: ${JSON.stringify(nodeName(loc))}\n    url: ${url}\n${icon}    type: globalping\n    location: ${cc}\n    expectedStatusCodes:\n      - 204\n`;
   console.log(`Ajoute : ${loc.id}`);
 }
 
