@@ -1,0 +1,56 @@
+name: Scheduler
+
+# GitHub's own cron does not fire on this repository, so this workflow
+# replaces it: it starts the uptime check every 5 minutes, the daily jobs
+# once a day, and restarts itself before the 6-hour job limit.
+#
+# To stop it: disable this workflow in the Actions tab.
+# To remove it: delete this file once "scheduled" runs of Uptime CI appear.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "41 * * * *" # restarts the chain if it ever breaks and cron works
+
+concurrency:
+  group: scheduler
+  cancel-in-progress: false
+
+permissions:
+  actions: write
+
+jobs:
+  tick:
+    name: Trigger checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Trigger workflows every 5 minutes
+        run: |
+          run() {
+            gh workflow run "$1" --repo "$GITHUB_REPOSITORY" \
+              || echo "::warning::could not start $1"
+          }
+          end=$(( $(date +%s) + 19800 )) # 5 h 30
+          while [ "$(date +%s)" -lt "$end" ]; do
+            now=$(date +%s)
+            sleep $(( 300 - now % 300 ))
+            case "$(date -u +%H%M)" in
+              2310) run response-time.yml; sleep 20 ;;
+              0020) run summary.yml; sleep 20 ;;
+              0040) run graphs.yml; sleep 20 ;;
+              0115) run site.yml; sleep 20 ;;
+              0415) run sync-nodes.yml ;;
+            esac
+            run uptime.yml
+          done
+      - name: Restart
+        if: success() || failure()
+        run: |
+          for i in 1 2 3 4 5; do
+            gh workflow run scheduler.yml --repo "$GITHUB_REPOSITORY" && exit 0
+            sleep 30
+          done
+          exit 1
