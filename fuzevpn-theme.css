@@ -55,49 +55,51 @@
   --graph-filter: none;
 }
 
-body {
+/* global.css est charge apres ce fichier : le prefixe html fait passer ces regles devant. */
+html body {
   font-family: "Archivo", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 /* En-tete */
-nav { font-weight: 500 !important; }
-nav .logo { font-weight: 700 !important; font-size: 1.05rem; letter-spacing: -0.01em; }
-nav .logo img { height: 2.25rem !important; border-radius: 6px !important; margin-right: 0.7rem !important; }
-nav a { padding-top: 1.35rem !important; padding-bottom: 1.35rem !important; }
-nav a:not(.logo) { color: var(--muted); }
-nav a[aria-current] { color: var(--ink); }
+html nav { font-weight: 500 !important; }
+html nav .logo { font-weight: 700 !important; font-size: 1.05rem; letter-spacing: -0.01em; }
+html nav .logo img { height: 2.25rem !important; border-radius: 6px !important; margin-right: 0.7rem !important; }
+html nav a { padding-top: 1.35rem !important; padding-bottom: 1.35rem !important; }
+html nav a:not(.logo) { color: var(--muted); }
+html nav a[aria-current] { color: var(--ink); }
 
 /* Titres et texte */
-h1 { font-weight: 800; letter-spacing: -0.03em; font-size: 2.3em; }
-h2 { font-weight: 700; letter-spacing: -0.02em; }
-h3 { font-weight: 600; opacity: 1; color: var(--muted); }
-p.lead { color: #3d3933; }
-main a { text-underline-offset: 0.15em; }
+html h1 { font-weight: 800; letter-spacing: -0.03em; font-size: 2.3em; }
+html h2 { font-weight: 700; letter-spacing: -0.02em; }
+html h3 { font-weight: 600; opacity: 1; color: var(--muted); }
+html p.lead { color: #3d3933; }
+html main a { text-underline-offset: 0.15em; }
 
 /* Cartes */
-article { border-radius: 6px; }
-article.up, article.down, article.degraded { border-left-width: 0.25rem; }
-article h4 { font-weight: 700; margin-bottom: 0.3em; }
-article h4 .icon { height: 0.85rem !important; border-radius: 2px; box-shadow: 0 0 0 1px var(--line); }
-article > div { color: var(--muted); font-size: 0.92rem; }
-article .data { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+html article { border-radius: 6px; }
+html article.up, html article.down, html article.degraded { border-left-width: 0.25rem; }
+html article h4 { font-weight: 700; margin-bottom: 0.3em; }
+html article h4 .icon { height: 0.85rem !important; border-radius: 2px; box-shadow: 0 0 0 1px var(--line); }
+html article > div { color: var(--muted); font-size: 0.92rem; }
+html article .data { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
 
 /* Le graphique de fond prend la teinte de la carte au lieu du vert d'origine. */
-article.graph {
+html article.graph {
   background-color: var(--surface);
   background-blend-mode: luminosity;
 }
 
 /* Selecteur de periode */
-form.r label {
+html form.r label {
   cursor: pointer;
   color: var(--muted);
   padding: 0.2rem 0.55rem;
   border-radius: 6px;
   margin-left: 0.25rem !important;
 }
-form.r input:checked + label { background: var(--ink); color: var(--paper); font-weight: 600 !important; }
+html form.r input:checked + label { background: var(--ink); color: var(--paper); font-weight: 600 !important; }
 
-.tag { border-radius: 6px; font-weight: 600; }
-footer { color: var(--muted); font-size: 0.9rem; opacity: 1 !important; }
+html .tag { border-radius: 6px; font-weight: 600; }
+html footer { color: var(--muted); font-size: 0.85rem; opacity: 1 !important; text-align: left; max-width: 800px; margin: 3rem auto 0; padding: 1.25rem 2rem 0; box-sizing: border-box; border-top: 1px solid var(--line); line-height: 1.55; }
+html footer strong { color: var(--ink); }
