@@ -1,0 +1,29 @@
+name: Sync VPN nodes
+
+on:
+  schedule:
+    - cron: "17 4 * * *" # une fois par jour
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Avec GH_PAT, le push relance la mise a jour du site.
+          token: ${{ secrets.GH_PAT || github.token }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/sync-nodes.mjs
+      - name: Commit
+        run: |
+          if git diff --quiet -- .upptimerc.yml; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Add new VPN nodes from the API" -- .upptimerc.yml
+          git push
