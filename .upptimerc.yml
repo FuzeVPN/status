@@ -115,3 +115,13 @@ i18n:
   averageResponseTime: "HTTPS response time: $TIMEms"
   averageResponseTimeTitle: HTTPS response time
   footer: "**About response times.** Each figure is a full HTTPS request (DNS lookup, connection, encryption handshake, then the reply) sent by a monitoring probe located near the server. It is not a ping and it is not measured from your device. A full request takes several times longer than a ping, so these figures are higher than the latency shown in the FuzeVPN app and do not reflect your connection speed.<br><br>[FuzeVPN](https://fuzevpn.com) · Monitoring powered by [Upptime](https://upptime.js.org)"
+
+# Schedules, shifted off the top of the hour (GitHub runs those late)
+workflowSchedule:
+  graphs: "7 0 * * *"
+  responseTime: "11 23 * * *"
+  staticSite: "13 1 * * *"
+  summary: "19 0 * * *"
+  updateTemplate: "23 0 * * *"
+  updates: "29 3 * * *"
+  uptime: "2-59/5 * * * *"
