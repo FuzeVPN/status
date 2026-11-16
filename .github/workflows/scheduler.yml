@@ -1,7 +1,8 @@
 name: Scheduler
 
 # GitHub's own cron does not fire on this repository, so this workflow
-# replaces it: it starts the uptime check every 5 minutes, the daily jobs
+# replaces it: it starts the uptime check every 5 minutes, records response
+# times every 30 minutes, runs the daily jobs
 # once a day, and restarts itself before the 6-hour job limit.
 #
 # To stop it: disable this workflow in the Actions tab.
@@ -38,9 +39,9 @@ jobs:
             now=$(date +%s)
             sleep $(( 300 - now % 300 ))
             case "$(date -u +%H%M)" in
-              2310) run response-time.yml; sleep 20 ;;
+              ??10|??40) run response-time.yml; sleep 20 ;;
               0020) run summary.yml; sleep 20 ;;
-              0040) run graphs.yml; sleep 20 ;;
+              0050) run graphs.yml; sleep 20 ;;
               0115) run site.yml; sleep 20 ;;
               0415) run sync-nodes.yml ;;
             esac
