@@ -93,6 +93,13 @@ sites:
     location: Philadelphia
     expectedStatusCodes:
       - 204
+  - name: "VPN - Chisinau 01 (MD)"
+    url: https://chisinau-01.fuzevpn.com/ping
+    icon: https://status.fuzevpn.com/flags/md.svg
+    type: globalping
+    location: MD
+    expectedStatusCodes:
+      - 204
   # nodes:end
 
 status-website:
