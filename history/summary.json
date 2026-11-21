@@ -58,19 +58,19 @@
     "url": "https://sao-paulo-01.fuzevpn.com/ping",
     "icon": "https://status.fuzevpn.com/flags/br.svg",
     "slug": "vpn-sao-paulo-01-br",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.98%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "status": "up",
+    "uptime": "99.68%",
+    "uptimeDay": "98.33%",
+    "uptimeWeek": "99.68%",
+    "uptimeMonth": "99.68%",
+    "uptimeYear": "99.68%",
     "time": 196,
-    "timeDay": 214,
+    "timeDay": 211,
     "timeWeek": 196,
     "timeMonth": 196,
     "timeYear": 196,
     "dailyMinutesDown": {
-      "2026-11-21": 0
+      "2026-11-21": 24
     }
   },
   {
