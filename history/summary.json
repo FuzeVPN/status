@@ -41,19 +41,17 @@
     "icon": "https://status.fuzevpn.com/favicon.svg",
     "slug": "sign-in-and-new-connections-api",
     "status": "up",
-    "uptime": "99.96%",
-    "uptimeDay": "99.73%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.96%",
-    "uptimeYear": "99.96%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 207,
     "timeDay": 102,
     "timeWeek": 207,
     "timeMonth": 207,
     "timeYear": 207,
-    "dailyMinutesDown": {
-      "2026-11-23": 4
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "VPN - Sao Paulo 01 (BR)",
@@ -98,9 +96,9 @@
     "url": "https://frankfurt-02.fuzevpn.com/ping",
     "icon": "https://status.fuzevpn.com/flags/de.svg",
     "slug": "vpn-frankfurt-02-de",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -109,7 +107,9 @@
     "timeWeek": 89,
     "timeMonth": 90,
     "timeYear": 90,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-11-23": 0
+    }
   },
   {
     "name": "VPN - Gravelines 03 (FR)",
