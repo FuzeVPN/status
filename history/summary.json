@@ -4,19 +4,19 @@
     "url": "https://fuzevpn.com",
     "icon": "https://status.fuzevpn.com/favicon.svg",
     "slug": "website",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "status": "up",
+    "uptime": "99.97%",
+    "uptimeDay": "99.72%",
+    "uptimeWeek": "99.96%",
+    "uptimeMonth": "99.97%",
+    "uptimeYear": "99.97%",
     "time": 493,
-    "timeDay": 560,
-    "timeWeek": 470,
+    "timeDay": 554,
+    "timeWeek": 469,
     "timeMonth": 493,
     "timeYear": 493,
     "dailyMinutesDown": {
-      "2026-11-24": 0
+      "2026-11-24": 4
     }
   },
   {
