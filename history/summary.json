@@ -40,19 +40,19 @@
     "url": "https://api.fuzevpn.com/healthz",
     "icon": "https://status.fuzevpn.com/favicon.svg",
     "slug": "sign-in-and-new-connections-api",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.98%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "status": "up",
+    "uptime": "99.97%",
+    "uptimeDay": "99.66%",
+    "uptimeWeek": "99.95%",
+    "uptimeMonth": "99.97%",
+    "uptimeYear": "99.97%",
     "time": 187,
-    "timeDay": 170,
-    "timeWeek": 153,
+    "timeDay": 168,
+    "timeWeek": 152,
     "timeMonth": 187,
     "timeYear": 187,
     "dailyMinutesDown": {
-      "2026-11-28": 0
+      "2026-11-28": 5
     }
   },
   {
